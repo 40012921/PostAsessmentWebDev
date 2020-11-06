@@ -1,0 +1,23 @@
+[{
+    "name": "Kulcha King",
+    "city":"Mumbai",
+    "type": "veg",
+    "cuisine": "Indian"
+},
+{
+    "name": "Chappan Bhog",
+    "city":"Delhi",
+    "type": "veg",
+    "cuisine": "Indian"
+},
+{
+    "name": "Spice Nest",
+    "city":"Assam",
+    "type": "nonveg",
+    "cuisine": "Chinese"
+},
+{   "name": "Absolute Chinese",
+    "city":"Bangalore",
+    "type": "nonveg",
+    "cuisine": "Chinese"
+}]

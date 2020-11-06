@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>HotelsRESTAPI</title>
+ <script src = "https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $('#showAll').click(function(){
+            var url = 'http://localhost:3000/showAll' ;
+            $.get(url , function(data,status){
+                data.forEach(hotel => {
+                    var str='';
+                    for (const prop in hotel){
+                        str+=prop+' '+hotel[prop]+' '+'<br>';
+                    }
+                $('#mydiv').append(str).append('<br>');
+                });
+            })
+        });
+
+        $('#showcity').click(function(){
+            var url ='http://localhost:3000/showByCity';
+            var citychoice = $('#acity').val();
+            $.get(url,{city:citychoice},function(data,status){
+                data.forEach(hotel => {
+                    var str='';
+                    for (const prop in hotel){
+                        str+=prop+' '+hotel[prop]+' '+'<br>';
+                    }
+                $('#mydiv').append(str).append('<br>');
+            })
+        });
+    });
+    $('#showcuisine').click(function(){
+            var url ='http://localhost:3000/showByCuisine';
+            var cuisinechoice = $('#acuisine').val();
+            $.get(url,{cuisine:cuisinechoice},function(data,status){
+                data.forEach(hotel => {
+                    var str='';
+                    for (const prop in hotel){
+                        str+=prop+' '+hotel[prop]+' '+'<br>';
+                    }
+                $('#mydiv').append(str).append('<br>');
+            })
+        });
+    });
+    $('#showcity').click(function(){
+            var url ='http://localhost:3000/showByType';
+            var typechoice = $('#atype').val();
+            $.get(url,{type:typechoice},function(data,status){
+                data.forEach( hotel=> {
+                    var str='';
+                    for (const prop in hotel){
+                        str+=prop+' '+ hotel[prop]+' '+'<br>';
+                    }
+                $('#mydiv').append(str).append('<br>');
+            })
+        });
+    });
+    });
+</script>
+</head>
+<body>
+    <table border="10" cellpadding = 10 cellspacing = 10 align="left">
+        <tr>
+            <td><input type="button" id='showAll' value="Show All Hotels"></td>
+        </tr>
+        <tr>
+            <td>Enter City ::</td>
+            <td> <input type="text" id="acity" name="city"></td>
+            <td><input type="button" id='showcity' value="Search by City"></td>
+        </tr>
+        <tr>
+            
+            <td>Select Type (nonveg/veg) ::</td>
+            <td>
+            <select name="lang" id="atype" multiple size="3">
+                <option value="select">--select--</option>
+                <option value="nonveg">nonveg</option>
+                <option value="veg">veg</option>
+            </select> </td>   
+           <td><input type="button" id='showtype' value="Search by Type"></td>
+        </tr>
+        <tr>
+            <td> Select Cuisine (Indian/Chinese) ::</td>
+            <td><input type="text" id = "acuisine" value ="Search By Cuisine"></td>
+            <td><input type="button" id='showcuisine' value="Search by Cuisine"></td>
+        </tr>
+    </table>
+ <table border="10" cellpadding = 10 cellspacing = 10 align="center">
+    <tr id="mydiv">
+        </tr>
+ </table>
+
+</body>
+</html>
