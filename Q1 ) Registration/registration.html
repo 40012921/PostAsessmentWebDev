@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function storedetails(){
+            username=document.getElementById("username").value ;
+            password=document.getElementById("password").value ;
+            email = document.getElementById("aemail").value ;
+            phone =document.getElementById("phone").value ;
+            localStorage.setItem('uname',username) ;
+            localStorage.setItem('upass',password) ;
+            localStorage.setItem('uphone',phone) ;
+            localStorage.setItem('uemail',email);
+            document.myform.submit() ;
+        }
+    </script>
+</head>
+<body>
+    <form action="intimation.html" name="myform"> 
+    Username :: <input type="text" id = "username "name="fname"  /><br />
+    Password :: <input type="password" pattern="[0-9][a-z][A-Z][!@#$%^&*]{10}" id  = "password" ><br>
+    Email :: <input type="email" name="email" id = "aemail " ><br>
+    Phone :: <input type="tel" pattern="[0-9]{10}" name="phone" id="phone"><br>
+    <input type="Button" value="Save Details" onclick="storedetails()">
+    <div id="myid"></div>
+    </form>
+</body>
+</html>

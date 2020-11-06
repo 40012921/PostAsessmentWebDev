@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="myid2">  </div>
+    <div id="myid3">  </div>
+    <div id="myid4">  </div>
+    <div id="myid5">  </div>
+    <script>
+            var username =localStorage.getItem('uname',username) ;
+            var password = localStorage.getItem('upass',password) ;
+            var phone = localStorage.getItem('uphone',phone) ;
+            var email = localStorage.getItem('uemail',email);
+            document.getElementById("myid2").innerHTML = username  ;
+            document.getElementById("myid3").innerHTML = password ;
+            document.getElementById("myid4").innerHTML = phone ;
+            document.getElementById("myid5").innerHTML = email  ;
+    </script>
+</body>
+</html>
